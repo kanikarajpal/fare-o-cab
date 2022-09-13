@@ -14,7 +14,6 @@ comm = pickle.load(open("models/com", 'rb' ))
 tax = pickle.load(open("models/tax", 'rb' ))
 
 
-bing_maps_key = 'Ap50P6W8lZQfCIxxv1bTh0r2htetOojglwdIFqnnNVWZcDcbik-K8XSyom5pW89s'
 
 label_encoder = preprocessing.LabelEncoder()
 
