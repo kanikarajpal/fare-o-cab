@@ -11,15 +11,16 @@
 }
 
 body {
-  background: #fff url(car.jpg) center center/cover no-repeat fixed;
+  background: #fff url('../img/car.jpg') center center/cover no-repeat fixed;
+
   color: var(--white);
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .main-container-1 {
   display: flex;
   gap: 5%;
-  padding:2%;
+  padding: 2%;
 }
 .cont-2 {
   display: flex;
@@ -32,9 +33,8 @@ body {
   width: 100%;
   color: var(--blue);
   margin-bottom: 10%;
-  gap:2em;
+  gap: 2em;
 }
-
 
 .main-container-2 {
   display: flex;
@@ -46,21 +46,20 @@ body {
   background-color: var(--white);
   color: var(--black);
   padding: 2%;
-  
+
   align-items: center;
   margin: 2% 15%;
-  
 }
-.form-div{
-    display: flex;
-    flex-direction: column;
-    gap:1em;
+.form-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 #calculate {
   background-color: var(--blue);
   color: var(--white);
   border-radius: 5px;
-  width:100%;
+  width: 100%;
 }
 
 .right-container {
