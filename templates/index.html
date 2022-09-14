@@ -9,8 +9,10 @@
       src="https://kit.fontawesome.com/9602f37a92.js"
       crossorigin="anonymous"
     ></script>
+    
   </head>
-  <link rel="stylesheet" href="./staticstyle.css" />
+  
+  <link rel="stylesheet" href="../static/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -21,7 +23,7 @@
   <body>
     <div class="main-container-1">
       <div class="cont-1">
-        <img src="icon2.png" class="icon-bar" alt="icon" />
+        <img src="../static/img/icon2.png" class="icon-bar" alt="icon" />
       </div>
       <div class="cont-2">
         <div class="min-heading sub-container">Home</div>
@@ -55,8 +57,9 @@
         </div>
         <h2>Calculate now</h2>
         <br />
+        
 
-        <form action="/action_page.php" class="form-div" method="get">
+        <form class="form-div">
           <input
             type="text"
             id="pickup_loc"
@@ -90,7 +93,7 @@
             <option value="11">SUV Rentals</option>
             <option value="4">Prime Play</option></select
           ><br>
-          <input type="submit" id="calculate" value="Calculate Ride Now" />
+          <button id="calculate"  onclick="assign_value(e)">Calculate ride now</button>
         </form>
       </div>
     </div>
@@ -100,5 +103,6 @@
       <br />
       Lorem ipsum dolor sit.
     </div>
+    <script src="../static/js/script.js"></script>
   </body>
 </html>

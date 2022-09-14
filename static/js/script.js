@@ -205,3 +205,16 @@ console.log(result_to.resourceSets[0].resources[4].point.coordinates);
 // The code up here will fetch us the cordinates of the location that the user will input. Launch the same shit with to and from
 // Docs - https://docs.microsoft.com/en-us/bingmaps/rest-services/locations/find-a-location-by-query
 // Thought I could add - https://docs.microsoft.com/en-us/bingmaps/rest-services/locations/local-search local search The Bing Maps Local Search API returns a list of business entities centered around a location or a geographic region. But it just works on US addresses
+
+
+
+
+const pickup_loc= document.getElementById('pickup_loc');
+const destination= document.getElementById('destination');
+const calc_button=document.getElementById('calculate');
+
+console.log('cvhj')
+const assign_value =(e) =>{
+  e.preventDefault()
+console.log(pickup_loc.value, destination.value)
+}
