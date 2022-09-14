@@ -6,7 +6,6 @@
 #Try to predict the commision base cost.
 
 import pickle
-
 import pandas as pd
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
