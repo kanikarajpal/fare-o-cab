@@ -2,18 +2,15 @@
 
 const bing_key =
   'Ap50P6W8lZQfCIxxv1bTh0r2htetOojglwdIFqnnNVWZcDcbik-K8XSyom5pW89s';
-  
+
 const toll_guru = 'LDgnHdrHf3r3tRJ49D79m2bRgdFj2t7Q';
 
 const from = 'Mandir Marg, Baldev Park, Krishna Nagar, Delhi, 110051';
 
 let to =
-  'E-60 Vikas Marg Veer Savarkar Block Block G Laxmi Nagar New Delhi Delhi 110092';
-let processed_to = to.split(' ').join('%20');
-
-// const example = '1%20Microsoft%20Way%20Redmond%20WA%2098052';
-
-const bing_get_location_url = `http://dev.virtualearth.net/REST/v1/Locations/${to}?&key=${bing_key}`;
+  'E-60 Vikas Marg Veer, Savarkar Block Block G Laxmi Nagar New Delhi Delhi 110092';
+  
+const bing_get_location_url = `http://dev.virtualearth.net/REST/v1/Locations/${encodeURI(to)}?&key=${bing_key}`;
 
 const result_to = {
   authenticationResultCode: 'ValidCredentials',
