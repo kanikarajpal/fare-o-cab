@@ -2,7 +2,6 @@
 import pickle
 import pandas as pd
 from datetime import date
-
 from sklearn import preprocessing
 
 today = date.today()

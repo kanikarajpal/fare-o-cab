@@ -60,12 +60,10 @@ body {
   color: var(--white);
   border-radius: 5px;
   width: 100%;
+  cursor: pointer;
 }
 
 .right-container {
-  /* position: absolute;
-    top: 90%;
-    left:18%; */
   text-align: right;
   padding: 2% 5%;
 }
@@ -110,6 +108,37 @@ body {
   left: -30px;
   padding: 0.8%;
 }
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgba(0, 0, 0, 0.628);
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sec {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1em;
+}
+.sec3 {
+  flex-direction: column;
+  gap: 1em;
+}
+
+.subsec {
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  font-size: larger;
+  text-align: center;
+  border: 2px solid var(--yellow);
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 426px) {
   .sub-container {
     display: none;

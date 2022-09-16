@@ -53,28 +53,29 @@
       <h2>Calculate now</h2>
       <br />
 
-      <form action="/action_page.php" class="form-div" method="get">
+      <div class="form-div">
         <input type="text" id="pickup_loc" class="input-bar" name="pickup_loc" size="30"
           placeholder="Select pickup location" required />
 
         <input type="text" id="destination" class="input-bar" name="destination" size="30"
           placeholder="Enter destination" required />
-        <select class="select-category" required>
+
+        <select class="select-category" onchange="setCategory(this.value)">
           <option value="0">Select category :</option>
-          <option value="1">Micro</option>
-          <option value="3">Prime</option>
-          <option value="2">Mini</option>
-          <option value="5">Sedan</option>
-          <option value="6">Play</option>
-          <option value="7">Prime Rentals</option>
-          <option value="8">Prime Play Rentals</option>
-          <option value="9">Mini Rentals</option>
-          <option value="10">Lux</option>
-          <option value="11">SUV Rentals</option>
-          <option value="4">Prime Play</option>
+          <option value="Micro">Micro</option>
+          <option value="Mini">Mini</option>
+          <option value="Prime" selected>Prime</option>
+          <option value="Prime Play">Prime Play</option>
+          <option value="Sedan">Sedan</option>
+          <option value="Play">Play</option>
+          <option value="Prime Rentals">Prime Rentals</option>
+          <option value="Prime Play Rentals">Prime Play Rentals</option>
+          <option value="Mini Rentals">Mini Rentals</option>
+          <option value="Lux">Lux</option>
+          <option value="SUV Rentals">SUV Rentals</option>
         </select><br>
-        <input type="submit" id="calculate" value="Calculate Ride Now" />
-      </form>
+        <button id="calculate" value="Calculate Ride Now" onclick="submitHandle()">Calculate Fare</button>
+      </div>
     </div>
   </div>
   <div class="right-container sub-container">
@@ -83,6 +84,45 @@
     <br />
     Lorem ipsum dolor sit.
   </div>
+
+  <div class="result-container">
+    <div class="sec1 sec">
+      <div class="distance subsec">
+        0 KMs
+      </div>
+      <div class="duration subsec">
+        0 minutes
+      </div>
+      <div class="traffic subsec">
+        Heavy
+      </div>
+    </div>
+    <div class="sec2 sec">
+      <div class="toll subsec">
+        0 Ruppes
+      </div>
+      <div class="category subsec">
+        Prime
+      </div>
+      <div class="price subsec">
+        0 Ruppes
+      </div>
+    </div>
+
+
+    <div class="sec3 sec">
+      <div class="direction subsec">
+        Directions -
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+  <script src="{{url_for('static', filename='js/script.js')}}"></script>
 </body>
 
 </html>
