@@ -5,14 +5,38 @@ const bing_key =
 const toll_guru = 'LDgnHdrHf3r3tRJ49D79m2bRgdFj2t7Q';
 let category = 'Prime';
 
-
 function setCategory(val) {
   category = val;
+}
+
+async function sendToFlask(distance, duration, category) {
+  const dict_values = { distance, duration, category };
+  const s = JSON.stringify(dict_values);
+
+  await fetch('/send', {
+    method: 'POST',
+    body: JSON.stringify(s),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      document.querySelector(
+        '.price'
+      ).textContent = `Total Cab Cost - ${json.result}`;
+      return 0;
+    });
 }
 
 function displayRes(distObj) {
   const resources = distObj.resourceSets[0].resources[0];
   const routeLegs = resources.routeLegs[0];
+  const distance = routeLegs.travelDistance;
+  const duration = routeLegs.travelDuration / 60;
+  const box = document.querySelector('.sec3');
+
+  sendToFlask(distance, duration, category);
 
   console.log('status code. - ', distObj.statusCode);
   console.log('Starts at', routeLegs.actualStart.coordinates);
@@ -20,21 +44,19 @@ function displayRes(distObj) {
 
   document.querySelector(
     '.distance'
-  ).textContent = `Distance - ${routeLegs.travelDistance} Kms`;
-
-  document.querySelector('.duration').textContent = `Duration - ${
-    routeLegs.travelDuration / 60
-  } Mins`;
-
+  ).textContent = `Distance - ${distance} Kms`;
+  document.querySelector(
+    '.duration'
+  ).textContent = `Duration - ${duration} Mins`;
   document.querySelector(
     '.traffic'
   ).textContent = `Traffic - ${resources.trafficCongestion}`;
-
   document.querySelector('.toll ').textContent = `Toll - ${0}`;
-  document.querySelector('.price').textContent = `Total Cab Cost - ${0}`;
   document.querySelector('.category ').textContent = `Catergoey - ${category}`;
 
-
+  if (box.innerHTML != '') {
+    box.innerHTML = '';
+  }
   routeLegs.itineraryItems.forEach((item) => {
     const dirc = document.createElement('div');
     dirc.classList.add('subsec');
@@ -42,10 +64,10 @@ function displayRes(distObj) {
       item.travelDistance * 1000
     } meters`;
 
-    const box = document.querySelector('.sec3');
     box.appendChild(dirc);
   });
 }
+
 async function submitHandle() {
   const from = encodeURI(document.getElementById('pickup_loc').value);
   const to = encodeURI(document.getElementById('destination').value);

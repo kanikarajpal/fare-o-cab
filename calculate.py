@@ -1,4 +1,4 @@
-
+import app
 import pickle
 import pandas as pd
 from datetime import date
@@ -11,31 +11,32 @@ day = today.strftime('%A')
 driver = pickle.load(open("models/dri", 'rb' ))
 comm = pickle.load(open("models/com", 'rb' ))
 tax = pickle.load(open("models/tax", 'rb' ))
-
-
+toll = 0
 
 label_encoder = preprocessing.LabelEncoder()
 
-def data_cleaning(data):
+def dataFixing(input):
+  data =  pd.DataFrame(input, columns=['month', 'day_of_week',  'distance_travelled',  'time_taken','category', 'toll'])
+  
   data['month']= label_encoder.fit_transform(data['month']) 
   data['day_of_week']= label_encoder.fit_transform(data['day_of_week'])
   data['category']= label_encoder.fit_transform(data['category'])
+  
+  return data
 
 
+data = [[month, day[:3], result["distance"], int(result["duration"]),result["category"], calculate.toll]]
 
-data = [[month, day[:3], 22, 46.0,'Prime', 0]]
+fixed = dataFixing(data)
 
-data_cx =  pd.DataFrame(data, columns=['month', 'day_of_week',  'distance_travelled',  'time_taken','category', 'toll'])
-
-data_cleaning(data_cx)
-
-
-def totalCostCalc(driver, comm, tax, data_cx):
-    driver_cost = driver.predict(data_cx)[0]
-    comm_cost = comm.predict(data_cx)[0]
+def totalCostCalc(driver, comm, tax, fixed):
+    print(type(fixed), "\n"*100)
+    driver_cost = driver.predict(fixed)[0]
+    
+    comm_cost = comm.predict(fixed)[0]
     tax_cost = tax.predict(pd.DataFrame([[comm_cost, driver_cost]], columns=["commission_base_cost","driver_base_cost"]))[0]
     
     return  tax_cost + comm_cost + driver_cost
 
+total = totalCostCalc(driver, comm, tax, fixed)
 
-print("This is the total cost"  , totalCostCalc(driver, comm, tax, data_cx) )
