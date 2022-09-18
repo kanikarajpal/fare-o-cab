@@ -1,7 +1,6 @@
 ## Fare-o-cab
 
-An app that could predict the approximate cab fare of your ride.
-
+An app that could predict the approximate cab fare of your ride. Hosted at - https://fare-o-cab.herokuapp.com/
 
 ## Features
 
