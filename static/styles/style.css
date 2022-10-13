@@ -139,6 +139,20 @@ body {
   margin: 0 auto;
 }
 
+.container
+{
+   height: 100vh;
+}
+
+.fareMore {
+  display: flex;
+  justify-content: space-between;
+}
+.subFareMore
+{
+  display: flex;
+  gap: 0.5em;
+}
 @media only screen and (max-width: 426px) {
   .sub-container {
     display: none;

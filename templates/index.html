@@ -16,68 +16,81 @@
 <link href="https://fonts.googleapis.com/css2?  mily=Poppins&display=swap" rel="stylesheet" />
 
 <body>
-  <div class="main-container-1">
-    <div class="cont-1">
-      <img src="{{ url_for('static', filename='img/icon2.png') }}" class="icon-bar" alt="icon" />
-    </div>
-    <div class="cont-2">
-      <div class="min-heading sub-container">Home</div>
-      <div class="min-heading sub-container">Popular outstation routes</div>
-      <div class="min-heading sub-container">About menu</div>
-      <div class="min-heading sub-container">Offers</div>
-      <div class="min-heading sub-container">Partner with us</div>
-      <div class="min-heading"></div>
-    </div>
-  </div>
-  <div class="side-container sub-container">ENQUIRE</div>
-  <div class="main-container-2">
-    <div class="form-container">
-      <div class="main-head">
-        <div class="sub-head">
-          <i class="fa-solid fa-taxi fa-lg"></i>
-          <p>Ola</p>
-        </div>
-        <div class="sub-head">
-          <i class="fa-brands fa-uber fa-lg"></i>
-          <p>Uber</p>
-        </div>
-        <div class="sub-head">
-          <i class="fa-solid fa-circle-question fa-lg"></i>
-          <p>Meru</p>
-        </div>
-        <div class="sub-head">
-          <i class="fa-solid fa-circle-question fa-lg"></i>
-          <p>Kyft</p>
-        </div>
+  <div class="container">
+    <div class="main-container-1">
+      <div class="cont-1">
+        <img src="{{ url_for('static', filename='img/icon2.png') }}" class="icon-bar" alt="icon" />
       </div>
-      <h2>Calculate now</h2>
-      <br />
-
-      <div class="form-div">
-        <input type="text" id="pickup_loc" class="input-bar" name="pickup_loc" size="30"
-          placeholder="Select pickup location" required />
-
-        <input type="text" id="destination" class="input-bar" name="destination" size="30"
-          placeholder="Enter destination" required />
-
-        <select class="select-category" onchange="setCategory(this.value)">
-          <option value="0">Select category :</option>
-          <option value="Micro">Micro</option>
-          <option value="Mini">Mini</option>
-          <option value="Prime" selected>Prime</option>
-          <option value="Prime Play">Prime Play</option>
-          <option value="Sedan">Sedan</option>
-          <option value="Play">Play</option>
-          <option value="Prime Rentals">Prime Rentals</option>
-          <option value="Prime Play Rentals">Prime Play Rentals</option>
-          <option value="Mini Rentals">Mini Rentals</option>
-          <option value="Lux">Lux</option>
-          <option value="SUV Rentals">SUV Rentals</option>
-        </select><br>
-        <button id="calculate" value="Calculate Ride Now" onclick="submitHandle()">Calculate Fare</button>
+      <div class="cont-2">
+        <div class="min-heading sub-container">Home</div>
+        <div class="min-heading sub-container">Popular outstation routes</div>
+        <div class="min-heading sub-container">About menu</div>
+        <div class="min-heading sub-container">Offers</div>
+        <div class="min-heading sub-container">Partner with us</div>
+        <div class="min-heading"></div>
       </div>
     </div>
+    <div class="side-container sub-container">ENQUIRE</div>
+    <div class="main-container-2">
+      <div class="form-container">
+        <div class="main-head">
+          <div class="sub-head">
+            <i class="fa-solid fa-taxi fa-lg"></i>
+            <p>Ola</p>
+          </div>
+          <div class="sub-head">
+            <i class="fa-brands fa-uber fa-lg"></i>
+            <p>Uber</p>
+          </div>
+          <div class="sub-head">
+            <i class="fa-solid fa-circle-question fa-lg"></i>
+            <p>Meru</p>
+          </div>
+          <div class="sub-head">
+            <i class="fa-solid fa-circle-question fa-lg"></i>
+            <p>Lyft</p>
+          </div>
+        </div>
+        <h2>Calculate now</h2>
+        <br />
+
+        <div class="form-div">
+          <input type="text" id="pickup_loc" class="input-bar" name="pickup_loc" size="30"
+            placeholder="Select pickup location" required />
+
+          <input type="text" id="destination" class="input-bar" name="destination" size="30"
+            placeholder="Enter destination" required />
+
+          <select class="select-category" onchange="setCategory(this.value)">
+            <option value="0">Select category :</option>
+            <option value="Micro">Micro</option>
+            <option value="Mini">Mini</option>
+            <option value="Prime" selected>Prime</option>
+            <option value="Prime Play">Prime Play</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Play">Play</option>
+            <option value="Prime Rentals">Prime Rentals</option>
+            <option value="Prime Play Rentals">Prime Play Rentals</option>
+            <option value="Mini Rentals">Mini Rentals</option>
+            <option value="Lux">Lux</option>
+            <option value="SUV Rentals">SUV Rentals</option>
+          </select>
+
+          <div class="fareMore">
+            <p>Estimated Fare - </p>
+            <div class="subFareMore">
+              <p class="fare">0</p>
+              <img src="" alt="">
+            </div>
+          </div>
+
+          <button id="calculate" value="Calculate Ride Now" onclick="submitHandle()">Calculate Fare</button>
+        </div>
+      </div>
+    </div>
   </div>
+
+
   <div class="right-container sub-container">
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos,
     dolore.
@@ -109,7 +122,9 @@
       </div>
     </div>
 
-<div class="sec"><p>Directions - </p></div>
+    <div class="sec">
+      <p>Directions - </p>
+    </div>
     <div class="sec3 sec">
 
     </div>

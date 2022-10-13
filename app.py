@@ -8,6 +8,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+
 today = date.today()
 month = today.strftime("%B")
 day = today.strftime('%A')
@@ -54,5 +55,5 @@ def test():
     return {"result": round(total,2)}
 
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
