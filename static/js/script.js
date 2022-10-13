@@ -22,6 +22,7 @@ async function sendToFlask(distance, duration, category) {
   })
     .then((response) => response.json())
     .then((json) => {
+      document.querySelector('.fare').textContent = json.result;
       document.querySelector(
         '.price'
       ).textContent = `Total Cab Cost - ${json.result}`;
@@ -71,7 +72,8 @@ function displayRes(distObj) {
 async function submitHandle() {
   const from = encodeURI(document.getElementById('pickup_loc').value);
   const to = encodeURI(document.getElementById('destination').value);
-  document.querySelector('.price').scrollIntoView();
+  document.querySelector('.fareMore').style.display = 'flex';
+  // document.querySelector('.price').scrollIntoView();
 
   const url = `http://dev.virtualearth.net/REST/V1/Routes?wp.0=${from}&wp.1=${to}&optmz=timeWithTraffic&key=${bing_key}`;
 

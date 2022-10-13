@@ -9,6 +9,10 @@
   --black: #000;
   --blue: #080644;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 
 body {
   background: #fff url('../img/car.jpg') center center/cover no-repeat fixed;
@@ -139,19 +143,30 @@ body {
   margin: 0 auto;
 }
 
-.container
-{
-   height: 100vh;
+.container {
+  height: 100vh;
 }
 
 .fareMore {
-  display: flex;
+  display: none;
+
   justify-content: space-between;
+  font-size: 0.9em;
+  align-items: center;
 }
-.subFareMore
-{
+.subFareMore {
   display: flex;
-  gap: 0.5em;
+  align-items: center;
+
+  gap: 0.1em;
+}
+.fare::after {
+  content: '>';
+  margin: 0 5px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: 0.85em;
 }
 @media only screen and (max-width: 426px) {
   .sub-container {
