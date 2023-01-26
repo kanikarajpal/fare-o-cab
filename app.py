@@ -44,6 +44,7 @@ def hello_world():
 
 @app.route('/send', methods=['POST'])
 def test():
+    
     output = request.get_json()
     result = json.loads(output) 
     
